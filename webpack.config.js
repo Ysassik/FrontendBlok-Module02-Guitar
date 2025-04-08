@@ -16,7 +16,6 @@ module.exports = ({develop}) => ({
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    assetModuleFilename: 'images/[hash][ext][query]',
     clean: true,
   },
   plugins: [
@@ -31,7 +30,7 @@ module.exports = ({develop}) => ({
     rules: [
         {
             test: /\.(png|svg|jpg|jpeg)$/i,
-            type: 'asset/resource',
+            type: 'asset/inline',
           },
         {
             test: /\.html$/i,
@@ -48,6 +47,10 @@ module.exports = ({develop}) => ({
             use: [
               MiniCssExtractPlugin.loader,'css-loader','sass-loader'
             ]
+          },
+        {
+            test: /\.(woff|woff2|eot|ttf|otf)$/i,
+            type: 'asset/resource',
           }
     ]
   },

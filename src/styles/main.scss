@@ -1,5 +1,13 @@
-$bg: #ff0;
+@use 'font';
+@use 'var';
+
 
 body {
-    background-color: $bg;
+    background-color: $dark;
+    font-family: $font;
+}
+a {
+    color: $light;
+    font-size: 34px;
+    font-weight: 600;
 }
