@@ -5,9 +5,89 @@
 body {
     background-color: $dark;
     font-family: $font;
+    font-weight: 400;
+    margin: 0;
 }
+
+.header {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    height: 71px;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        height: 27px;
+        width: 100%;
+        top: 0;
+        background-color: $accent;
+        
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 24px;
+        width: 100%;
+        bottom: -24px;
+        background-image: url('../images/header-bottom.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+    }
+    
+    &_logo {
+        position: relative;
+        background-color: $accent;
+        padding: 20px 47px 20px 45px;
+        border-radius: 10px 0 0 0;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 71px;
+            width: 60px;
+            top: 0;
+            right: -59px;
+            background-image: url('../images/header-left.svg');
+        }
+    }
+    
+    &_link {
+        position: relative;
+        background-color: $accent;
+        color: $light;
+        font-size: 20px;
+        padding: 20px 45px 20px 21px;
+        border-radius: 0 10px 0 0;
+        text-decoration: underline;
+        text-underline-offset: 6px;
+        transition: $tr;
+
+        &:hover {
+            color: $dark;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 71px;
+            width: 60px;
+            top: 0;
+            left: -59px;
+            background-image: url('../images/header-right.svg');
+        }
+        
+    }
+}
+
 a {
-    color: $light;
-    font-size: 34px;
-    font-weight: 600;
+    text-decoration: none;
+
 }
