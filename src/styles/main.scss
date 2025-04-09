@@ -61,15 +61,18 @@ body {
     &_link {
         position: relative;
         background-color: $accent;
-        color: $light;
-        font-size: 20px;
         padding: 20px 45px 20px 21px;
         border-radius: 0 10px 0 0;
-        text-decoration: underline;
-        text-underline-offset: 6px;
-        transition: $tr;
 
-        &:hover {
+        & > a {
+            color: $light;
+            font-size: 20px;
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            transition: $tr;
+        }
+
+        & > a:hover {
             color: $dark;
         }
 
