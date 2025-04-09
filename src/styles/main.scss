@@ -3,7 +3,7 @@
 
 
 body {
-    background-color: $dark;
+    background-color: $bg;
     font-family: $font;
     font-weight: 400;
     margin: 0;
@@ -21,22 +21,10 @@ body {
         position: absolute;
         z-index: -1;
         height: 27px;
-        width: 100%;
+        width: calc(100% - 90px);
+        left: 45px;
         top: 0;
         background-color: $accent;
-        
-    }
-
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        height: 24px;
-        width: 100%;
-        bottom: -24px;
-        background-image: url('../images/header-bottom.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
         
     }
     
@@ -45,6 +33,20 @@ body {
         background-color: $accent;
         padding: 20px 47px 20px 45px;
         border-radius: 10px 0 0 0;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 28px;
+            width: 27px;
+            left: 0px;
+            bottom: -27px;
+            background-image: url('../images/header-bottom-left.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            
+        }
 
         &::after {
             content: '';
@@ -87,6 +89,19 @@ body {
             background-image: url('../images/header-right.svg');
         }
         
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 28px;
+            width: 27px;
+            right: 0px;
+            bottom: -27px;
+            background-image: url('../images/header-bottom-right.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            
+        }
     }
 }
 
