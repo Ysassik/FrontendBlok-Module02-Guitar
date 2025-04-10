@@ -1,5 +1,6 @@
 @use 'font' as *;
 @use 'var' as *;
+@use "scss-reset";
 
 
 body {
@@ -7,6 +8,19 @@ body {
     font-family: $font;
     font-weight: 400;
     margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1830px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+
 }
 
 .header {
@@ -105,7 +119,100 @@ body {
     }
 }
 
-a {
-    text-decoration: none;
+.main {
+    margin-top: 40px;
+}
 
+.banner {
+    display: flex;
+    background-image: url('../images/banner-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    border-radius: 50px;
+    padding: 100px 50px;
+    column-gap: 50px;
+
+    &__title {
+        color: $light;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 110%;
+    }
+
+    &__info {
+        background-color: $bg;
+        width: 649px;
+        height: 661px;
+        border-radius: 50px;
+    }
+
+    &__btn {
+        border: 1px solid $accent;
+        padding: 52px 0;
+        background-color: $accent;
+        width: 100%;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 110%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $light;
+        transition: $tr;
+    }
+
+    &__btn:hover {
+        background-color: $bg;
+        border: 1px solid $accent;
+    }
+}
+
+.banner-box {
+    display: flex;
+    position: relative;
+    padding: 30px 0 30px 30px;
+    border: 1px solid $light;
+    border-radius: 20px;
+    margin: 20px 0 135px 0;
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        width: 669px;
+    
+    
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $light; 
+    }
+
+    &__text {
+        margin-top: 30px; 
+        max-width: 669px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        color: $light;
+    }   
+}
+
+.area {
+    position: relative;
+    height: 176px;
+    width: 332px;
+
+    &__img{
+        position: absolute;
+        left: 16px;
+        bottom: 0px;
+        width: 336px;
+        height: auto;
+    }
 }
