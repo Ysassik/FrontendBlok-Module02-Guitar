@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const devServer = (isDev) => isDev ? {}:{
+const devServer = (isDev) => !isDev ? {}:{
   devServer: {
     open:true,
     hot:true,
@@ -51,6 +51,9 @@ module.exports = ({develop}) => ({
         {
             test: /\.(woff|woff2|eot|ttf|otf)$/i,
             type: 'asset/resource',
+            generator: {
+              filename: 'font/[hash][ext][query]'
+            }
           }
     ]
   },
