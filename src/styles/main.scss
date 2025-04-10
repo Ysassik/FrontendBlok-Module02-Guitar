@@ -169,20 +169,11 @@ a {
 }
 
 .banner-box {
-    display: flex;
     position: relative;
-    padding: 30px 0 30px 30px;
+    padding: 30px 348px 30px 30px;
     border: 1px solid $light;
     border-radius: 20px;
     margin: 20px 0 135px 0;
-
-    &__main {
-        display: flex;
-        flex-direction: column;
-        width: 669px;
-    
-    
-    }
 
     &__title {
         font-weight: 400;
@@ -200,19 +191,15 @@ a {
         font-size: 20px;
         line-height: 150%;
         color: $light;
+        margin-top: 30px;
     }   
-}
-
-.area {
-    position: relative;
-    height: 176px;
-    width: 332px;
 
     &__img{
         position: absolute;
-        left: 16px;
-        bottom: 0px;
-        width: 336px;
-        height: auto;
+        
+        &._electroguitar {
+            bottom: 30.13px;
+            right: -20.8px;
+        }
     }
 }
