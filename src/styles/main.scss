@@ -8,11 +8,12 @@ body {
     font-family: $font;
     font-weight: 400;
     margin: 0;
+    color: $light;
 }
 
 .container {
     width: 100%;
-    max-width: 1830px;
+    max-width: 1860px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
@@ -25,9 +26,12 @@ a {
 
 .header {
     display: flex;
-    position: relative;
+    position: fixed;
     justify-content: space-between;
     height: 71px;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 
     &::before {
         content: '';
@@ -120,7 +124,7 @@ a {
 }
 
 .main {
-    margin-top: 40px;
+    margin-top: 135px;
 }
 
 .banner {
@@ -133,6 +137,10 @@ a {
     padding: 100px 50px;
     column-gap: 50px;
 
+    &__main {
+        flex-basis: 61%;
+    }
+
     &__title {
         color: $light;
         font-weight: 700;
@@ -141,10 +149,87 @@ a {
     }
 
     &__info {
-        background-color: $bg;
-        width: 649px;
-        height: 661px;
-        border-radius: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 19px;
+        flex-basis: calc(39% - 50px);
+        margin-right: 80px;
+    }
+
+    &__item {
+        position: relative;
+        height: 151px;
+        border: 1px solid $light;
+        border-right: none;
+        border-radius: 20px 0 0 20px;
+        padding: 45px 0 30px 30px;
+        transition: $tr;
+
+        &:hover {
+            background-color: $accent;
+            border: 1px solid $accent;
+            border-right: none;
+            &::after {
+                opacity: 100%;
+            }
+            .banner__decor {
+                background-color: $accent;
+                border: 1px solid $accent;
+            }
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 80px;
+            height: 151px;
+            top: -1px;
+            right: -80px;
+            background-image: url(../images/icons/banner-info-decor.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        &::after {
+            content: '';
+            opacity: 0;
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: 80px;
+            height: 151px;
+            top: -1px;
+            right: -80px;
+            background-image: url(../images/icons/banner-info-decor-hover.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            transition: $tr;
+        }
+    }
+
+    &__item_title {
+        font-weight: 200;
+        font-size: 24px;
+        line-height: 110%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__item_info {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 110%;
+    }
+
+    &__decor {
+        position: absolute;
+        padding: 9px;
+        top: 0px;
+        right: -80px;
+        border: 1px solid $light;
+        border-radius: 10px;
+        transition: $tr;
     }
 
     &__btn {
@@ -160,17 +245,17 @@ a {
         text-transform: uppercase;
         color: $light;
         transition: $tr;
-    }
-
-    &__btn:hover {
-        background-color: $bg;
-        border: 1px solid $accent;
+        
+        &:hover {
+            background-color: $bg;
+            border: 1px solid $accent;
+        }
     }
 }
 
 .banner-box {
     position: relative;
-    padding: 30px 348px 30px 30px;
+    padding: 30px 332px 30px 30px;
     border: 1px solid $light;
     border-radius: 20px;
     margin: 20px 0 135px 0;
@@ -194,7 +279,7 @@ a {
         margin-top: 30px;
     }   
 
-    &__img{
+    &__img {
         position: absolute;
         
         &._electroguitar {
