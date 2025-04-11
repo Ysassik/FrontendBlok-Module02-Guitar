@@ -152,6 +152,7 @@ a {
         display: flex;
         flex-direction: column;
         gap: 19px;
+        max-width: 569px;
         flex-basis: calc(39% - 50px);
         margin-right: 80px;
     }
