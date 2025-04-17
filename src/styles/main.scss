@@ -166,61 +166,54 @@ a {
         padding: 45px 0 30px 30px;
         transition: $tr;
 
-        &:hover {
-            background-color: $accent;
-            border: 1px solid $accent;
-            border-right: none;
-            &::after {
-                opacity: 100%;
-            }
-            .banner__decor {
-                background-color: $accent;
-                border: 1px solid $accent;
-            }
-        }
-
         &::before {
             content: '';
             display: block;
             position: absolute;
-            width: 80px;
-            height: 151px;
             top: -1px;
-            right: -80px;
-            background-image: url(../images/icons/banner-info-decor.svg);
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-        &::after {
-            content: '';
-            opacity: 0;
-            display: block;
-            position: absolute;
-            z-index: 1;
-            width: 80px;
+            right: 1px;
+            border: 1px solid $accent;
+            border-right: none;
+            border-radius: 20px 0 0 20px;
+            background-color: $accent;
+            width: 100%;
             height: 151px;
-            top: -1px;
-            right: -80px;
-            background-image: url(../images/icons/banner-info-decor-hover.svg);
-            background-repeat: no-repeat;
-            background-size: contain;
+            z-index: 0;
             transition: $tr;
+            transform: translate(50%,0) scale(0);
+        }
+
+        &:hover {
+            &::before {
+                transform: translate(0,0) scale(1);
+            }
+
+            .banner__decor {
+                background-color: $accent;
+                border: 1px solid $accent;
+                
+                &::after {
+                    transform: translate(0, 0) scale(1);
+                }
+            }
         }
     }
 
-    &__item_title {
+    &__item_text {
+        position: relative;
         font-weight: 200;
         font-size: 24px;
         line-height: 110%;
         display: flex;
         flex-direction: column;
         gap: 15px;
-    }
+        z-index: 1;
 
-    &__item_info {
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 110%;
+        span {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 110%;
+        }
     }
 
     &__decor {
@@ -231,6 +224,35 @@ a {
         border: 1px solid $light;
         border-radius: 10px;
         transition: $tr;
+        transition-delay: 100ms;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 80px;
+            height: 151px;
+            top: -1.5px;
+            right: 0px;
+            background-image: url(../images/icons/banner-info-decor.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: 80px;
+            height: 151px;
+            top: -1.5px;
+            right: 0px;
+            background-image: url(../images/icons/banner-info-decor-hover.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            transform: translate(-50%, 0) scale(0);
+            transition: $tr;
+        }
     }
 
     &__btn {
