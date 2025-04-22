@@ -145,7 +145,7 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    border-radius: 50px;
+    border-radius: $br-max;
     padding: 100px 50px;
     column-gap: 50px;
 
@@ -284,7 +284,7 @@ a {
         padding: 52px 0;
         background-color: $accent;
         width: 100%;
-        border-radius: 20px;
+        border-radius: $br-min;
         font-weight: 600;
         font-size: 20px;
         line-height: 110%;
@@ -304,7 +304,7 @@ a {
     position: relative;
     padding: 30px 332px 30px 30px;
     border: 1px solid $light;
-    border-radius: 20px;
+    border-radius: $br-min;
     margin: 20px 0 0px 0;
 
     &__title {
@@ -352,7 +352,7 @@ a {
     &__text {
         padding: 10px 20px;
         border: 1px solid $grey;
-        border-radius: 50px;
+        border-radius: $br-max;
         position: relative;
         font-weight: 200;
         font-size: 24px;
@@ -373,7 +373,7 @@ a {
         width: 16px;
         height: 16px;
         background-color: $accent;
-        border-radius: 50px;
+        border-radius: $br-max;
         top: calc(50% - 8px);
     }
 }
@@ -413,7 +413,7 @@ a {
         background-color: $dark;
         border: 2px solid $dark;
         position: relative;
-        border-radius: 50px;
+        border-radius: $br-max;
         overflow: hidden;
         transition: $tr;
 
@@ -531,7 +531,7 @@ a {
         justify-content: space-between;
         background-color: $light;
         border: 1px solid $light;
-        border-radius: 20px;
+        border-radius: $br-min;
         width: 100%;
         font-weight: 400;
         font-size: 32px;
@@ -566,7 +566,7 @@ a {
         flex-direction: column;
         gap: 30px;
         border: 1px solid $light;
-        border-radius: 20px;
+        border-radius: $br-min;
         padding: 30px 50px;
         background-color: $light;
     }
@@ -579,5 +579,35 @@ a {
             border-bottom: 1px solid $grey;
             padding: 0px 0px 15px 0px;
         }
+    }
+}
+.steps {
+    width: 100%;
+    border: 1px solid $grey;
+    border-radius: $br-max;
+    background: linear-gradient(180deg, #1f2023 0%, #7027e2 50%, #1f2023 100%);
+    padding: 150px 0px;
+
+    &__list {
+        display: flex;
+        gap: 30px;
+        margin-top: 50px;
+    }
+    &__item {
+        flex-basis: 25%;
+        padding: 30px;
+        border-radius: $br-max;
+        background-color: $light;
+    }
+    &__img {
+        width: 54px;
+        height: 54px;
+    }
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $dark;
+        margin-top: 20px;
     }
 }
