@@ -24,6 +24,16 @@ a {
     text-decoration: none;
 
 }
+.title-h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $grey;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 .header {
     display: flex;
@@ -242,7 +252,7 @@ a {
             position: absolute;
             width: 80px;
             height: 151px;
-            top: -1.5px;
+            top: -2px;
             right: 0px;
             background-image: url(../images/icons/banner-info-decor.svg);
             background-repeat: no-repeat;
@@ -257,7 +267,7 @@ a {
             z-index: 1;
             width: 80px;
             height: 151px;
-            top: -1.5px;
+            top: -2px;
             right: 0px;
             background-image: url(../images/icons/banner-info-decor-hover.svg);
             background-repeat: no-repeat;
@@ -363,6 +373,7 @@ a {
         height: 16px;
         background-color: $accent;
         border-radius: 50px;
+        top: calc(50% - 8px);
     }
 }
 @keyframes move-left {
@@ -372,4 +383,140 @@ a {
         to {
             transform: translate(-100%,0);
         }
+}
+
+.course {
+    display: flex;
+    gap: 71px;
+    margin-bottom: 200px;
+
+    &__title {
+        flex-basis: 394px;
+    }
+    &__content {
+        flex-basis: calc(100% - 71px - 394px);
+        width: calc(100% - 71px - 394px);
+    }
+    &__img {
+        width: 100%;
+    }
+}
+
+.slider-teacher {
+    &__item {
+        display: flex;
+        height: 707px;
+        background-color: $dark;
+        border: 2px solid $dark;
+        position: relative;
+        border-radius: 50px;
+        overflow: hidden;
+        transition: $tr;
+
+        &:hover  {
+            border-color: $accent;
+
+            .slider-teacher__name {
+                opacity: 100;
+            }
+            .slider-teacher__grid {
+                opacity: 100;
+            }
+        }
+    }
+
+    &__grid {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: none;
+        opacity: 0;
+        transition: $tr;
+    }
+    
+    &__name {
+        position: absolute;
+        width: 100%;
+        bottom: 30px;
+        left: 30px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 110%;
+        color: $grey;
+        opacity: 0;
+        transition: $tr;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            display: block;
+            background: linear-gradient(43deg,rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);;
+            width: 100%;
+            height: 637px;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: -30px;
+            bottom: -30px;
+            z-index: -1;
+        }
+    }
+    &__img {
+        width: 100%;
+        height: 637px;
+        object-fit: cover;
+        position: absolute;
+        bottom: 0;
+    }
+
+
+}
+
+.course-control {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+
+    &__prev, &__next {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        border: 1px solid $light;
+        border-radius: 100%;
+        position: inherit;
+        margin-top: 0px;
+        transition: $tr;
+        &::after {
+            content: '';
+            display: block;
+            align-items: center;
+            justify-content: center;
+            width: 49px;
+            height: 24px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        &:hover {
+            background-color: $accent;
+            border-color: $accent;
+        }
+    }
+        
+    &__prev {
+        &::after {
+            background-image: url(../images/ui/Arrow_Left.svg);
+        }
+    }
+
+    &__next {
+        &::after {
+            background-image: url(../images/ui/Arrow_Right.svg);
+        }
+    }
 }
