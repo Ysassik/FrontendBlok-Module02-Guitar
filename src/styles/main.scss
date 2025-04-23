@@ -557,7 +557,7 @@ a {
     &__panel {
         max-height: 0;
         overflow: hidden;
-        transition: $tr;
+        transition: max-height $tr ease-out;
         margin-top: 24px;
     }
 
@@ -582,7 +582,8 @@ a {
     }
 }
 .steps {
-    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
     border: 1px solid $grey;
     border-radius: $br-max;
     background: linear-gradient(180deg, #1f2023 0%, #7027e2 50%, #1f2023 100%);
@@ -609,5 +610,67 @@ a {
         line-height: 150%;
         color: $dark;
         margin-top: 20px;
+    }
+}
+.result {
+    margin-top: 150px;
+    
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 50px;
+        gap: 30px;
+    }
+
+    &__item {
+        padding: 30px;
+        border-radius: $br-min;
+        background-color: $light;
+
+        &._subgrid {
+            display: grid;
+            grid-column: 2 / 5;
+            grid-template-columns: subgrid;
+        }
+    }
+
+    &__btn {
+        background-color: $accent;
+        border-radius: $br-min;
+        color: $light;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 110%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        grid-column: 2 / 5;
+        border: 1px solid $accent;
+        transition: $tr;
+        user-select: none;
+
+        &:hover {
+        background-color: $bg;
+        }
+    }
+
+    &__text {
+        color: $dark;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        user-select: none;
+        
+        span {
+            display: block;
+            padding: 10px;
+            color: $light;
+            background-color: $accent;
+            border-radius: 10px;
+            width: max-content;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 110%;
+            margin-bottom: 20px;
+        }
     }
 }
