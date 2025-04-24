@@ -12,6 +12,9 @@ body {
     overflow-x: hidden;
     line-height: 110%;
 }
+button {
+    cursor: pointer;
+}
 
 .container {
     width: 100%;
@@ -626,15 +629,21 @@ a {
         padding: 30px;
         border-radius: $br-min;
         background-color: $light;
+        &:nth-last-child(-n+2) {
+            align-content: end;
+        }
 
         &._subgrid {
             display: grid;
             grid-column: 2 / 5;
             grid-template-columns: subgrid;
+            grid-template-rows: 130px;
+            align-items: center;
         }
     }
 
     &__btn {
+        align-self: stretch;
         background-color: $accent;
         border-radius: $br-min;
         color: $light;
@@ -643,7 +652,7 @@ a {
         line-height: 110%;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        grid-column: 2 / 5;
+        grid-column: 2 / 4;
         border: 1px solid $accent;
         transition: $tr;
         user-select: none;
@@ -654,6 +663,9 @@ a {
     }
 
     &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         color: $dark;
         font-weight: 400;
         font-size: 16px;
@@ -661,16 +673,110 @@ a {
         user-select: none;
         
         span {
-            display: block;
+            width: fit-content;
             padding: 10px;
             color: $light;
             background-color: $accent;
             border-radius: 10px;
-            width: max-content;
             font-weight: 600;
             font-size: 24px;
             line-height: 110%;
-            margin-bottom: 20px;
+        }
+    }
+}
+.areas {
+    margin-top: 150px;
+
+    &__list {
+        margin-top: 50px;
+    }
+
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        background-color: transparent;
+        border-bottom: 1px solid $accent;
+        width: 100%;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 110%;
+        color: $light;
+        transition: $tr;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            z-index: 1;
+            transition: $tr;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        
+        &::after {
+            content: '';
+            display: block;
+            width: 48px;
+            height: 48px;
+            background-image: url(../images/ui/Arrow_Up_Right.svg);
+            transition: $tr;
+        }
+        
+        &._acoustic {
+            &::before {
+            background-image: url(../images/areas/acusticguitar.png);
+            width: 568px;
+            height: 365px;
+            bottom: -86.4px;
+            }
+        }
+        &._drums {
+            &::before {
+            background-image: url(../images/areas/drum.png);
+            width: 474px;
+            height: 474px;
+            bottom: -191px;
+            }
+        }
+        &._violin {
+            &::before {
+            background-image: url(../images/areas/violin.png);
+            width: 568px;
+            height: 599px;
+            bottom: -229.86px;
+            }
+        }
+        &._bass {
+            &::before {
+            background-image: url(../images/areas/bassguitar.png);
+            width: 586px;
+            height: 439px;
+            bottom: -149px;
+            }
+        }
+
+        &:hover {
+            background-color: $accent;
+            border-color: transparent;
+            border-radius: 10px;
+
+            &::after {
+                transform: rotate(45deg);
+            }
+
+            &::before { 
+            opacity: 1;
+            visibility: visible;
+            }
         }
     }
 }
