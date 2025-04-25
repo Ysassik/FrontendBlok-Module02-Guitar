@@ -845,6 +845,7 @@ a {
         width: 43px;
         height: 43px;
         position: relative;
+        transition: $tr;
 
         &::after {
             content: '';
@@ -852,6 +853,7 @@ a {
             mask: center center / 100% no-repeat;
             -webkit-mask: center center / 100% no-repeat;
             position: absolute;
+            transition: $tr;
         }
 
         &._wa {
@@ -885,6 +887,13 @@ a {
                 background-color: $accent;
                 width: 25px;
                 height: 21.88px;
+            }
+        }
+        &:hover {
+            background-color: $accent;
+
+            &::after {
+                background-color: $light;
             }
         }
     }
