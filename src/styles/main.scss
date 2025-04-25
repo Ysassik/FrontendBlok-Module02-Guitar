@@ -697,7 +697,6 @@ a {
         align-items: center;
         padding: 30px;
         background-color: transparent;
-        border-bottom: 1px solid $accent;
         width: 100%;
         font-weight: 400;
         font-size: 32px;
@@ -705,6 +704,11 @@ a {
         color: $light;
         transition: $tr;
         position: relative;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $accent;
+            margin-bottom: 30px;
+        }
 
         &::before {
             content: '';
