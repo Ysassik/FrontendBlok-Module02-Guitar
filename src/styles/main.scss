@@ -138,6 +138,21 @@ a {
     }
 }
 
+.logo {
+    &._max {
+        svg {
+            width: 400px;
+            height: 30.63px;
+        }
+    }
+    &._min {
+        svg {
+            width: 296px;
+            height: 22px;
+        }
+    }
+}
+
 .main {
     margin-top: 135px;
 }
@@ -716,9 +731,7 @@ a {
             background-repeat: no-repeat;
             background-size: contain;
             position: absolute;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
+            left: 770px;
             z-index: 1;
             transition: $tr;
             opacity: 0;
@@ -780,6 +793,98 @@ a {
             &::before { 
             opacity: 1;
             visibility: visible;
+            }
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    background-color: $dark;
+    border-radius: $br-min;
+    margin-top: 150px;
+    margin-bottom: 30px;
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    &__right {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: end;
+    }
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $light;
+    }
+    &__link {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: $accent;
+    }
+}
+
+.social {
+    display: flex;
+    gap: 11.25px;
+    
+    &__link {
+        display: block;
+        background-color: $light;
+        border-radius: 10px;
+        width: 43px;
+        height: 43px;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            mask: center center / 100% no-repeat;
+            -webkit-mask: center center / 100% no-repeat;
+            position: absolute;
+        }
+
+        &._wa {
+            padding: 7.87px 7.37px 7.87px 8.37px;
+
+            &::after {
+                mask-image: url('../images/icons/wa.svg');
+                -webkit-mask-image: url('../images/icons/wa.svg');
+                background-color: $accent;
+                width: 28px;
+                height: 28px;
+            }
+        }
+        &._vk {
+            padding: 14.06px 6.25px 10.94px 6.25px;
+
+            &::after {
+                mask-image: url('../images/icons/vk.svg');
+                -webkit-mask-image: url('../images/icons/vk.svg');
+                background-color: $accent;
+                width: 31.25px;
+                height: 18.75px;
+            }
+        }
+        &._tg {
+            padding: 10.94px 10.94px 10.94px 7.81px;
+
+            &::after {
+                mask-image: url('../images/icons/tg.svg');
+                -webkit-mask-image: url('../images/icons/tg.svg');
+                background-color: $accent;
+                width: 25px;
+                height: 21.88px;
             }
         }
     }
