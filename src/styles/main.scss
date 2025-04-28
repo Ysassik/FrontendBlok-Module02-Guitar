@@ -18,10 +18,15 @@ button {
 
 .container {
     width: 100%;
-    max-width: 1860px;
-    padding-left: 15px;
-    padding-right: 15px;
+    max-width: 1920px;
+    padding-left: 45px;
+    padding-right: 45px;
     margin: 0 auto;
+    box-sizing: border-box;
+    @media (max-width: $r_desk) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 a {
@@ -66,6 +71,9 @@ a {
         background-color: $accent;
         padding: 20px 47px 20px 45px;
         border-radius: 10px 0 0 0;
+        @media (max-width: $r_desk) {
+            padding: 20px 47px 20px 20px;
+        }
 
         &::before {
             content: "";
@@ -98,6 +106,9 @@ a {
         background-color: $accent;
         padding: 20px 45px 20px 21px;
         border-radius: 0 10px 0 0;
+        @media (max-width: $r_desk) {
+            padding: 20px 20px 20px 21px;
+        }
 
         & > a {
             color: $light;
@@ -106,9 +117,10 @@ a {
             text-underline-offset: 6px;
             transition: $tr;
         }
-
-        & > a:hover {
-            color: $grey;
+        @media (hover: hover) {
+            & > a:hover {
+                color: $grey;
+            }
         }
 
         &::before {
@@ -216,22 +228,23 @@ a {
             transform-origin: bottom right;
             transform: scale(0);
         }
-
-        &:hover {
-            border-color: transparent;
-            &::before {
-                transform: scale(1);
-            }
-
-            .banner__decor {
-                background-color: $accent;
-                border: 1px solid $accent;
-                
+        @media (hover: hover) {
+            &:hover {
+                border-color: transparent;
                 &::before {
-                    opacity: 0;;
-                }
-                &::after {
                     transform: scale(1);
+                }
+    
+                .banner__decor {
+                    background-color: $accent;
+                    border: 1px solid $accent;
+                    
+                    &::before {
+                        opacity: 0;;
+                    }
+                    &::after {
+                        transform: scale(1);
+                    }
                 }
             }
         }
@@ -310,10 +323,11 @@ a {
         text-transform: uppercase;
         color: $light;
         transition: $tr;
-        
-        &:hover {
-            background-color: transparent;
-            border: 1px solid $accent;
+        @media (hover: hover) {
+            &:hover {
+                background-color: transparent;
+                border: 1px solid $accent;
+            }
         }
     }
 }
@@ -362,9 +376,10 @@ a {
     justify-content: center;
     margin: 150px 0;
 
-
-    &:hover {
-        animation-play-state: paused;
+    @media (hover: hover) {
+        &:hover {
+            animation-play-state: paused;
+        }
     }
 
     &__text {
@@ -434,15 +449,16 @@ a {
         border-radius: $br-max;
         overflow: hidden;
         transition: $tr;
-
-        &:hover  {
-            border-color: $accent;
-
-            .slider-teacher__name {
-                opacity: 100;
-            }
-            .slider-teacher__grid {
-                opacity: 100;
+        @media (hover: hover) {
+            &:hover  {
+                border-color: $accent;
+    
+                .slider-teacher__name {
+                    opacity: 100;
+                }
+                .slider-teacher__grid {
+                    opacity: 100;
+                }
             }
         }
     }
@@ -523,10 +539,11 @@ a {
             background-repeat: no-repeat;
             background-size: contain;
         }
-
-        &:hover {
-            background-color: $accent;
-            border-color: $accent;
+        @media (hover: hover) {
+            &:hover {
+                background-color: $accent;
+                border-color: $accent;
+            }
         }
     }
         
@@ -671,9 +688,10 @@ a {
         border: 1px solid $accent;
         transition: $tr;
         user-select: none;
-
-        &:hover {
-        background-color: $bg;
+        @media (hover: hover) {
+            &:hover {
+                background-color: $bg;
+            }
         }
     }
 
@@ -780,62 +798,66 @@ a {
             bottom: -149px;
             }
         }
-
-        &:hover {
-            background-color: $accent;
-            border-color: transparent;
-            border-radius: 10px;
-
-            &::after {
-                transform: rotate(45deg);
-            }
-
-            &::before { 
-            opacity: 1;
-            visibility: visible;
+        @media (hover: hover) {
+            &:hover {
+                background-color: $accent;
+                border-color: transparent;
+                border-radius: 10px;
+    
+                &::after {
+                    transform: rotate(45deg);
+                }
+    
+                &::before { 
+                opacity: 1;
+                visibility: visible;
+                }
             }
         }
     }
 }
 
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    gap: 10px 20px;
     padding: 30px 50px;
     background-color: $dark;
     border-radius: $br-min;
     margin-top: 150px;
     margin-bottom: 30px;
-    &__left {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-    &__right {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: end;
-    }
+ 
     &__text {
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
         color: $light;
+
     }
     &__link {
         font-weight: 700;
         font-size: 16px;
         line-height: 150%;
-        text-decoration: underline;
-        text-decoration-skip-ink: none;
         color: $accent;
+        box-shadow: 0 1px 0 0 $accent;
+        transition: $tr;
+        @media (hover: hover) {
+            &:hover {
+                box-shadow: 0 1px 0 0 transparent;
+            }
+        }
+    }
+    &__copy {
+        max-width: fit-content;
+        align-self: end;
+        justify-self: end;
     }
 }
 
 .social {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
     gap: 11.25px;
     
     &__link {
@@ -889,11 +911,13 @@ a {
                 height: 21.88px;
             }
         }
-        &:hover {
-            background-color: $accent;
-
-            &::after {
-                background-color: $light;
+        @media (hover: hover) {
+            &:hover {
+                background-color: $accent;
+    
+                &::after {
+                    background-color: $light;
+                }
             }
         }
     }
