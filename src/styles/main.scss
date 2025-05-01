@@ -27,6 +27,10 @@ button {
         padding-left: 20px;
         padding-right: 20px;
     }
+    @media (max-width: $r_tab) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 a {
@@ -53,6 +57,10 @@ a {
     top: 0;
     z-index: 100;
 
+    @media (max-width: $r_tab) {
+        height: 64px;
+    }
+
     &::before {
         content: '';
         display: block;
@@ -67,12 +75,16 @@ a {
     }
     
     &_logo {
+        display: block;
         position: relative;
         background-color: $accent;
-        padding: 20px 47px 20px 45px;
+        padding: 20px 47px 20.37px 45px;
         border-radius: 10px 0 0 0;
         @media (max-width: $r_desk) {
             padding: 20px 47px 20px 20px;
+        }
+        @media (max-width: $r_tab) {
+            padding: 20px 47px 20px 15px;
         }
 
         &::before {
@@ -98,28 +110,42 @@ a {
             top: 0;
             right: -59px;
             background-image: url('../images/header-left.svg');
+            @media (max-width: $r_tab) {
+                height: 64px;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
         }
     }
     
     &_link {
         position: relative;
         background-color: $accent;
-        padding: 20px 45px 20px 21px;
+        padding: 23px 45px 17px 21px;
         border-radius: 0 10px 0 0;
         @media (max-width: $r_desk) {
             padding: 20px 20px 20px 21px;
         }
-
+        @media (max-width: $r_tab) {
+            height: 64px;
+            padding: 20px 15px 20px 21px;
+        }
+ 
         & > a {
             color: $light;
             font-size: 20px;
-            text-decoration: underline;
-            text-underline-offset: 6px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid $light;
             transition: $tr;
+
+            @media (max-width: $r_tab) {
+                font-size: 16px;
+            }
         }
         @media (hover: hover) {
             & > a:hover {
                 color: $grey;
+                border-color: $grey;
             }
         }
 
@@ -132,6 +158,12 @@ a {
             top: 0;
             left: -59px;
             background-image: url('../images/header-right.svg');
+            @media (max-width: $r_tab) {
+                background-size: contain;
+                background-repeat: no-repeat;
+                left: -53px;
+                height: 64px;
+            }
         }
         
         &::after {
@@ -155,6 +187,15 @@ a {
         svg {
             width: 400px;
             height: 30.63px;
+
+            @media (max-width: $r_desk) {
+                width: clamp(300px, 39vw, 400px);
+                height: clamp(22.97px, 39vw,30.63px);
+            }
+            @media (max-width: $r_tab) {
+                width: clamp(300px, 39vw, 400px);
+                height: 22.97px;
+            }
         }
     }
     &._min {
@@ -177,13 +218,19 @@ a {
     background-position: bottom;
     border-radius: $br-max;
     padding: 100px 50px;
-    column-gap: 50px;
+    gap: 50px;
 
+    @media (max-width: $r_desk_full_over) {
+        flex-direction: column;
+    }
+    @media (max-width: $r_desk) {
+        padding: 80px 40px;
+    }
     &__main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        flex-basis: 61%;
+        flex-basis: 59.5%;
     }
 
     &__title {
@@ -191,15 +238,21 @@ a {
         font-weight: 700;
         font-size: 64px;
         line-height: 110%;
+        @media (max-width: $r_desk_full) {
+            font-size: clamp(50px, 2.93vw + 1.25rem, 64px);
+        }
     }
 
     &__info {
         display: flex;
         flex-direction: column;
         gap: 19px;
-        max-width: 569px;
-        flex-basis: calc(39% - 50px);
-        margin-right: 80px;
+        flex-basis: calc(40.5% - 50px);
+
+        @media (max-width: $r_desk_full_over) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__item {
@@ -209,7 +262,14 @@ a {
         border-right: none;
         border-radius: 20px 0 0 20px;
         padding: 45px 0 30px 30px;
+        margin-right: 80px;
         transition: $tr;
+
+        @media (max-width: ($r_desk - 24px)) {
+            margin-right: 0;
+            border: 1px solid $light;
+            border-radius: $br-min;
+        }
 
         &::before {
             content: '';
@@ -227,10 +287,21 @@ a {
             transition: $tr;
             transform-origin: bottom right;
             transform: scale(0);
+
+            @media (max-width: ($r_desk - 24px)) {
+                visibility: hidden;
+            }
+    
         }
         @media (hover: hover) {
             &:hover {
                 border-color: transparent;
+
+                @media (max-width: ($r_desk - 24px)) {
+                    background-color: $accent;
+                    border-color: $accent;
+                }
+
                 &::before {
                     transform: scale(1);
                 }
@@ -260,6 +331,10 @@ a {
         gap: 15px;
         z-index: 1;
 
+        @media (max-width: ($r_desk - 24px)) {
+            margin-left: 70px;
+        }
+
         span {
             font-weight: 700;
             font-size: 32px;
@@ -277,6 +352,14 @@ a {
         transition: $tr;
         transform-origin: bottom left;
         transition-delay: 50ms;
+        @media (max-width: ($r_desk - 24px)) {
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 55px;
+            right: inherit;
+            transition-delay: inherit;
+        }
+
 
         &::before {
             content: '';
@@ -291,6 +374,10 @@ a {
             background-size: contain;
             transform-origin: bottom left;
             transition: $tr;
+
+            @media (max-width: ($r_desk - 24px)) {
+                display: none;
+            }
         }
         &::after {
             content: '';
@@ -307,6 +394,9 @@ a {
             transform-origin: bottom left;
             transform: scale(0);
             transition: $tr;
+            @media (max-width: ($r_desk - 24px)) {
+                display: none;
+            }
         }
     }
 
@@ -323,6 +413,11 @@ a {
         text-transform: uppercase;
         color: $light;
         transition: $tr;
+
+        @media (max-width: $r_desk_full_over) {
+            margin-top: 50px;
+        }
+
         @media (hover: hover) {
             &:hover {
                 background-color: transparent;
@@ -338,6 +433,10 @@ a {
     border: 1px solid $light;
     border-radius: $br-min;
     margin: 20px 0 0px 0;
+
+    @media (max-width: $r_desk_full_over) {
+        padding-right: clamp(295px, 3vw, 337px);
+    }
 
     &__title {
         font-weight: 400;
@@ -363,6 +462,14 @@ a {
         &._electroguitar {
             bottom: 30.13px;
             right: -20.8px;
+            
+            @media (max-width: $r_desk_full_over) {
+                width: clamp(300px, 3vw, 337px);
+            }
+            @media (max-width: $r_desk_full) {
+                bottom: inherit;
+                top: -63px;
+            }
         }
     }
 }
@@ -435,7 +542,7 @@ a {
         width: 100%;
     }
     &__schedule {
-        margin-top: 50px;
+        margin-top: 48px;
     }
 }
 
@@ -565,7 +672,6 @@ a {
         align-items: center;
         justify-content: space-between;
         background-color: $light;
-        border: 1px solid $light;
         border-radius: $br-min;
         width: 100%;
         font-weight: 400;
@@ -602,7 +708,7 @@ a {
         gap: 30px;
         border: 1px solid $light;
         border-radius: $br-min;
-        padding: 30px 50px;
+        padding: 29px 49px;
         background-color: $light;
     }
     &__item {
@@ -610,9 +716,10 @@ a {
         font-weight: 300;
         font-size: 24px;
         color: $dark;
+        line-height: 109%;
         &:not(:last-child) {
             border-bottom: 1px solid $grey;
-            padding: 0px 0px 15px 0px;
+            padding: 0px 0px 14px 0px;
         }
     }
 }
@@ -728,12 +835,12 @@ a {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 30px;
+        padding: 30px 30px 29px 30px;
         background-color: transparent;
         width: 100%;
         font-weight: 400;
         font-size: 32px;
-        line-height: 110%;
+        line-height: 150%;
         color: $light;
         transition: $tr;
         position: relative;
@@ -760,9 +867,10 @@ a {
         &::after {
             content: '';
             display: block;
-            width: 48px;
-            height: 48px;
-            background-image: url(../images/ui/Arrow_Up_Right.svg);
+            width: 40px;
+            height: 40px;
+            padding: 4px 0;
+            background-image: url(../images/ui/Arrow_Up_Right_Small.svg);
             transition: $tr;
         }
         
@@ -805,7 +913,8 @@ a {
                 border-radius: 10px;
     
                 &::after {
-                    transform: rotate(45deg);
+                    transform:scale(0.833333) rotate(45deg);
+
                 }
     
                 &::before { 
@@ -818,21 +927,42 @@ a {
 }
 
 .footer {
-    display: grid;
-    grid-template-columns: 1fr 450px;
-    gap: 10px 20px;
+    display: flex;
+    justify-content: space-between;
     padding: 30px 50px;
     background-color: $dark;
     border-radius: $br-min;
     margin-top: 150px;
     margin-bottom: 30px;
- 
+    
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
     &__text {
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
         color: $light;
 
+        a {
+            margin-left: 10px;
+        }
+
+    }
+
+    &__logo {
+        svg {
+            max-width: fit-content;
+        }
     }
     &__link {
         font-weight: 700;
@@ -858,7 +988,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 11.25px;
+    gap: 5px;
     
     &__link {
         display: block;
@@ -880,6 +1010,7 @@ a {
 
         &._wa {
             padding: 7.87px 7.37px 7.87px 8.37px;
+            margin: 3px 2.5px 2px 2.5px;
 
             &::after {
                 mask-image: url('../images/icons/wa.svg');
@@ -891,6 +1022,7 @@ a {
         }
         &._vk {
             padding: 14.06px 6.25px 10.94px 6.25px;
+            margin: 3.12px;
 
             &::after {
                 mask-image: url('../images/icons/vk.svg');
@@ -902,6 +1034,7 @@ a {
         }
         &._tg {
             padding: 10.94px 10.94px 10.94px 7.81px;
+            margin: 3.12px;
 
             &::after {
                 mask-image: url('../images/icons/tg.svg');
