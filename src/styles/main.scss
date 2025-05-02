@@ -46,6 +46,7 @@ a {
     color: $grey;
     margin-top: 0;
     margin-bottom: 0;
+    max-height: 35px;
 }
 
 .header {
@@ -716,10 +717,14 @@ a {
         font-weight: 300;
         font-size: 24px;
         color: $dark;
-        line-height: 109%;
+        line-height: 110%;
+        max-height: 41px;
         &:not(:last-child) {
             border-bottom: 1px solid $grey;
             padding: 0px 0px 14px 0px;
+        }
+        &:last-child {
+            max-height: 26px;
         }
     }
 }
@@ -734,7 +739,7 @@ a {
     &__list {
         display: flex;
         gap: 30px;
-        margin-top: 50px;
+        margin-top: 49px;
     }
     &__item {
         flex-basis: 25%;
@@ -760,7 +765,7 @@ a {
     &__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        margin-top: 50px;
+        margin-top: 49px;
         gap: 30px;
     }
 
@@ -828,7 +833,7 @@ a {
     margin-top: 150px;
 
     &__list {
-        margin-top: 50px;
+        margin-top: 49px;
     }
 
     &__link {
@@ -869,7 +874,6 @@ a {
             display: block;
             width: 40px;
             height: 40px;
-            padding: 4px 0;
             background-image: url(../images/ui/Arrow_Up_Right_Small.svg);
             transition: $tr;
         }
@@ -913,8 +917,7 @@ a {
                 border-radius: 10px;
     
                 &::after {
-                    transform:scale(0.833333) rotate(45deg);
-
+                    transform:scale(1.17) rotate(45deg);
                 }
     
                 &::before { 
