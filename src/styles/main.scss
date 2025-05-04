@@ -85,7 +85,7 @@ a {
             padding: 20px 47px 20px 20px;
         }
         @media (max-width: $r_tab) {
-            padding: 20px 47px 20px 15px;
+            padding: 20px 47px 21.03px 15px;
         }
 
         &::before {
@@ -125,11 +125,11 @@ a {
         padding: 23px 45px 17px 21px;
         border-radius: 0 10px 0 0;
         @media (max-width: $r_desk) {
-            padding: 20px 20px 20px 21px;
+            padding: 23px 20px 17px 21px;
         }
         @media (max-width: $r_tab) {
             height: 64px;
-            padding: 20px 15px 20px 21px;
+            padding: 19px 15px 19px 21px;
         }
  
         & > a {
@@ -224,7 +224,7 @@ a {
     @media (max-width: $r_desk_full_over) {
         flex-direction: column;
     }
-    @media (max-width: $r_desk) {
+    @media (max-width: $r_desk_full) {
         padding: 80px 40px;
     }
     @media (max-width: ($r_desk - 24px)) {
@@ -243,10 +243,10 @@ a {
         font-size: 64px;
         line-height: 110%;
         @media (max-width: $r_desk_full) {
-            font-size: clamp(50px, 2.93vw + 1.25rem, 64px);
+            font-size: clamp(50px, 0.5rem + 4vw, 64px);
         }
         @media (max-width: ($r_desk - 24px)) {
-            font-size: clamp(40px, -1.6232rem + 5.7971vw, 50px);
+            font-size: clamp(40px, 0rem + 5vw, 50px);
         }
     }
 
@@ -273,9 +273,11 @@ a {
         transition: $tr;
 
         @media (max-width: ($r_desk - 24px)) {
+            max-height: fit-content;
             margin-right: 0;
             border: 1px solid $light;
             border-radius: $br-min;
+            padding: 24px 0 24px 30px;
         }
 
         &::before {
@@ -339,6 +341,11 @@ a {
         z-index: 1;
 
         @media (max-width: ($r_desk - 24px)) {
+            span {
+               font-size: 20px;
+            }
+            gap: 10px;
+            font-size: 18px;
             margin-left: 70px;
         }
 
@@ -427,8 +434,9 @@ a {
         @media (max-width: $r_desk_full_over) {
             margin-top: 50px;
         }
-        @media (max-width: $r_desk) {
-            margin-top: 50px;
+        @media (max-width: ($r_desk - 24px)) {
+            margin-top: 30px;
+            padding: 44px 0;
         }
 
         @media (hover: hover) {
@@ -449,6 +457,10 @@ a {
 
     @media (max-width: $r_desk_full_over) {
         padding-right: clamp(295px, 3vw, 337px);
+    }
+    
+    @media (max-width: ($r_desk - 24px)) {
+        padding-right: clamp(232px, 3vw, 295px);
     }
 
     &__title {
@@ -485,6 +497,8 @@ a {
             }
             @media (max-width: ($r_desk - 24px)) {
                 width: clamp(252px, 3vw, 300px);
+                top: -51px;
+                right: 6px;
             }
         }
     }
@@ -499,8 +513,11 @@ a {
     justify-content: center;
     margin: 150px 0;
 
-    @media (max-width: $r_desk) {
+    @media (max-width: $r_desk_full) {
         margin: 100px 0;
+    }
+    @media (max-width: ($r_desk - 24px)) {
+        margin: 80px 0;
     }
 
     @media (hover: hover) {
