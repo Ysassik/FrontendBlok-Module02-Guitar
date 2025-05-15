@@ -75,7 +75,7 @@ a {
         left: 45px;
         top: 0;
         background-color: $accent;
-        
+            
     }
     
     &_logo {
@@ -88,7 +88,11 @@ a {
             padding: 20px 47px 20px 20px;
         }
         @media (max-width: ($r_desk - 24px)) {
-            padding: 20px 47px 21.03px 15px;
+            padding: 20px 30px 21.03px 15px;
+        }
+
+        a {
+            display: block;
         }
 
         &::before {
@@ -115,7 +119,10 @@ a {
             right: -59px;
             background-image: url('../images/header-left.svg');
             @media (max-width: ($r_desk - 24px)) {
+                background-image: url('../images/header-left_tab.svg');
                 height: 64px;
+                width: 56px;
+                right: -56px;
                 background-size: contain;
                 background-repeat: no-repeat;
             }
@@ -132,7 +139,7 @@ a {
         }
         @media (max-width: ($r_desk - 24px)) {
             height: 64px;
-            padding: 19px 15px 19px 21px;
+            padding: 19px 15px 19px 17px;
         }
  
         & > a {
@@ -142,7 +149,7 @@ a {
             border-bottom: 1px solid $light;
             transition: $tr;
 
-            @media (max-width: $r_tab) {
+            @media (max-width: ($r_desk - 24px)) {
                 font-size: 16px;
             }
         }
@@ -163,10 +170,12 @@ a {
             left: -59px;
             background-image: url('../images/header-right.svg');
             @media (max-width: ($r_desk - 24px)) {
+                background-image: url('../images/header-right_tab.svg');
+                height: 64px;
+                width: 56px;
+                left: -56px;
                 background-size: contain;
                 background-repeat: no-repeat;
-                left: -53px;
-                height: 64px;
             }
         }
         
@@ -192,9 +201,9 @@ a {
             width: 400px;
             height: 30.63px;
 
-            @media (max-width: $r_desk) {
-                width: clamp(300px, 39vw, 400px);
-                height: clamp(22.97px, 39vw,30.63px);
+            @media (max-width: ($r_desk - 24px)) {
+                width: 300px;
+                height: 22.97px;
             }
             @media (max-width: $r_tab) {
                 width: clamp(300px, 39vw, 400px);
@@ -236,7 +245,6 @@ a {
     &__main {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         flex-basis: 59.5%;
     }
 
@@ -422,7 +430,7 @@ a {
 
     &__btn {
         border: 1px solid $accent;
-        padding: 52px 0;
+        padding: 53px 0;
         background-color: $accent;
         width: 100%;
         border-radius: $br-min;
@@ -433,6 +441,7 @@ a {
         text-transform: uppercase;
         color: $light;
         transition: $tr;
+        margin-top: 135px;
 
         @media (max-width: $r_desk_full_over) {
             margin-top: 50px;
@@ -453,7 +462,7 @@ a {
 
 .banner-box {
     position: relative;
-    padding: 30px 332px 30px 30px;
+    padding: 29px 332px 29px 29px;
     border: 1px solid $light;
     border-radius: $br-min;
     margin: 20px 0 0px 0;
@@ -619,7 +628,7 @@ a {
         transition: $tr;
 
         @media (max-width: ($r_desk_full_over)) {
-            height: min(1000px, 48.7vw);
+            height: min(1000px, 48.2vw);
         }
         @media (max-width: ($r_desk - 24px)) {
             height: min(507px, 45vw);
@@ -940,6 +949,11 @@ a {
             grid-template-columns: subgrid;
             grid-template-rows: 130px;
             align-items: center;
+            @media (max-width: $r_desk_full_over) {
+            display: flex;
+            grid-template-columns: none;
+            gap: 30px;
+            }
         }
     }
 
@@ -960,6 +974,9 @@ a {
         @media (max-width: $r_desk_full_over) {
             font-size: 16px;
             line-height: 150%;
+            padding-left: 30px;
+            padding-right: 30px;
+            width: 100%;
         }
         @media (hover: hover) {
             &:hover {
@@ -1016,7 +1033,6 @@ a {
         color: $light;
         transition: $tr;
         position: relative;
-
         @media (max-width: $r_desk_full_over) {
             font-size: 20px;
             padding: 20px;
@@ -1110,6 +1126,9 @@ a {
                 background-color: $accent;
                 border-color: transparent;
                 border-radius: 10px;
+                @media (max-width: $r_desk_full_over) {
+                height: 88px;
+                }
                 &::after {
                     transform:scale(1.17) rotate(45deg);
                 }
@@ -1135,6 +1154,9 @@ a {
     @media (max-width: $r_desk_wxga) {
         grid-template-columns: 1fr 160px;
     }
+    @media (max-width: $r_desk_full_over) {
+        margin-top: 100px;
+    }
 
     &__text {
         font-weight: 400;
@@ -1152,6 +1174,11 @@ a {
         svg {
             max-width: fit-content;
         }
+    }
+    &__info {
+        @media (max-width: $r_desk_full_over) {
+        margin-top: 20px;
+    }
     }
     &__link {
         font-weight: 700;
