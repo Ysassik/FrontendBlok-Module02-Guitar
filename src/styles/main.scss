@@ -244,6 +244,7 @@ a {
     }
     &__main {
         display: flex;
+        justify-content: space-between;
         flex-direction: column;
         flex-basis: 59.5%;
     }
@@ -441,7 +442,6 @@ a {
         text-transform: uppercase;
         color: $light;
         transition: $tr;
-        margin-top: 135px;
 
         @media (max-width: $r_desk_full_over) {
             margin-top: 50px;
