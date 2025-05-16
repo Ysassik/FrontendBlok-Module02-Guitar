@@ -289,7 +289,7 @@ a {
             margin-right: 0;
             border: 1px solid $light;
             border-radius: $br-min;
-            padding: 24px 0 24px 30px;
+            padding: 23px 0 23px 30px;
         }
 
         &::before {
@@ -373,7 +373,7 @@ a {
 
     &__decor {
         position: absolute;
-        padding: 9px;
+        padding: 8px;
         top: 0px;
         right: -80px;
         border: 1px solid $light;
@@ -448,7 +448,7 @@ a {
         }
         @media (max-width: ($r_desk - 24px)) {
             margin-top: 30px;
-            padding: 44px 0;
+            padding: 43px 0;
         }
 
         @media (hover: hover) {
@@ -591,7 +591,7 @@ a {
         width: 100%;
     }
     &__schedule {
-        margin-top: 48px;
+        margin-top: 49px;
     }
 
     @media (max-width: $r_desk_full_over) {
@@ -631,7 +631,7 @@ a {
             height: min(1000px, 48.2vw);
         }
         @media (max-width: ($r_desk - 24px)) {
-            height: min(507px, 45vw);
+            height: min(507px, 45.35vw);
             border: 2px solid $accent;
         }
         @media (hover: hover) {
