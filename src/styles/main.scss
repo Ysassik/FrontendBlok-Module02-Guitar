@@ -1127,7 +1127,7 @@ a {
                 border-color: transparent;
                 border-radius: 10px;
                 @media (max-width: $r_desk_full_over) {
-                height: 88px;
+                padding: 28px 20px;
                 }
                 &::after {
                     transform:scale(1.17) rotate(45deg);
