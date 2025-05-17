@@ -199,22 +199,18 @@ a {
     &._max {
         svg {
             width: 400px;
-            height: 30.63px;
 
             @media (max-width: ($r_desk - 24px)) {
                 width: 300px;
-                height: 22.97px;
             }
             @media (max-width: $r_tab) {
                 width: clamp(300px, 39vw, 400px);
-                height: 22.97px;
             }
         }
     }
     &._min {
         svg {
             width: 296px;
-            height: 22px;
         }
     }
 }
@@ -1127,7 +1123,7 @@ a {
                 border-color: transparent;
                 border-radius: 10px;
                 @media (max-width: $r_desk_full_over) {
-                padding: 28px 20px;
+                padding: 24px 20px;
                 }
                 &::after {
                     transform:scale(1.17) rotate(45deg);
@@ -1220,6 +1216,7 @@ a {
         height: 43px;
         position: relative;
         transition: $tr;
+        margin: 3.12px;
 
         &::after {
             content: '';
@@ -1232,7 +1229,6 @@ a {
 
         &._wa {
             padding: 7.87px 7.37px 7.87px 8.37px;
-            margin: 3px 2.5px 2px 2.5px;
 
             &::after {
                 mask-image: url('../images/icons/wa.svg');
@@ -1244,7 +1240,6 @@ a {
         }
         &._vk {
             padding: 14.06px 6.25px 10.94px 6.25px;
-            margin: 3.12px;
 
             &::after {
                 mask-image: url('../images/icons/vk.svg');
@@ -1256,7 +1251,6 @@ a {
         }
         &._tg {
             padding: 10.94px 10.94px 10.94px 7.81px;
-            margin: 3.12px;
 
             &::after {
                 mask-image: url('../images/icons/tg.svg');
