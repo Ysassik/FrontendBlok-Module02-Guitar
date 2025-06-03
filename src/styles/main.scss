@@ -84,7 +84,9 @@ a {
         left: 45px;
         top: 0;
         background-color: $accent;
-            
+            @media (max-width: $r_mobile_full) {
+                height: 41px;
+            }
     }
     
     &_logo {
@@ -120,6 +122,12 @@ a {
             background-image: url('../images/header-bottom-left.svg');
             background-repeat: no-repeat;
             background-size: contain;
+            @media (max-width: $r_mobile_full) {
+                background-image: url('../images/header-bottom-left_m.svg');
+                height: 17px;
+                width: 17px;
+                bottom: -16px;
+            }
             
         }
 
@@ -223,7 +231,12 @@ a {
             background-image: url('../images/header-bottom-right.svg');
             background-repeat: no-repeat;
             background-size: contain;
-            
+            @media (max-width: $r_mobile_full) {
+                background-image: url('../images/header-bottom-right_m.svg');
+                height: 17px;
+                width: 17px;
+                bottom: -16px;
+            }
         }
     }
 }
